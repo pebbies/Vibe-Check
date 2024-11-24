@@ -3,9 +3,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./auth.js";
 import musicReducer from "./music.js";
 
-function loadAuthFromLocal() {
+function loadFromLocal() {
   const priorToken = localStorage.getItem("access_token");
   const expireEpoch = localStorage.getItem("expire_epoch");
+  const playlists = JSON.parse(localStorage.getItem("playlists")) ?? [];
   const isAuthenticated = !!priorToken && expireEpoch > Date.now();
 
   if (!isAuthenticated) {
@@ -15,10 +16,11 @@ function loadAuthFromLocal() {
 
   return {
     auth: { isAuthenticated },
+    music: { playlists },
   };
 }
 
-const preloadedState = loadAuthFromLocal();
+const preloadedState = loadFromLocal();
 
 const appReducers = combineReducers({
   auth: authReducer,

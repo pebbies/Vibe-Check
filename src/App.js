@@ -16,7 +16,7 @@ function App() {
         {isAuthenticated && (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/playlist" element={<Playlist />} />
+            <Route path="/playlist/:id" element={<Playlist />} />
           </>
         )}
       </Routes>

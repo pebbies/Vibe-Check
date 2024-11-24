@@ -42,6 +42,8 @@ const Home = () => {
 
         dispatch(upsertPlaylists({ playlists: playlistArr }));
 
+        localStorage.setItem("playlists", JSON.stringify(playlistArr));
+
         setTimeout(() => setIsLoading(false), 1000);
       } catch (error) {
         console.error("Error in setup:", error);

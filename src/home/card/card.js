@@ -3,7 +3,7 @@ import NewPLaylist from "./new-playlist";
 import { useEffect, useState } from "react";
 import { stripHTML } from "../../util/util";
 
-const Card = () => {
+const Card = ({ playlist = null, isSelected = false }) => {
   const { playlists } = useSelector((state) => state.music);
   const { username, imageURL } = useSelector((state) => state.auth);
 
@@ -23,10 +23,10 @@ const Card = () => {
       setImage(imageURL);
       setIsProfile(true);
     } else {
-      const playlist = playlists[playlists.length - 1];
+      playlist = playlist ?? playlists[playlists.length - 1];
       setName(playlist.name);
       setDescription(stripHTML(playlist.description));
-      setButtonName("Edit Playlist");
+      setButtonName(isSelected ? "Back To Main" : "Edit Playlist");
       setImage(playlist?.images?.length > 0 ? playlist.images[0] : null);
       setIsProfile(false);
     }
