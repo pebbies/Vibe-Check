@@ -11,7 +11,7 @@ All User Playlists
 ![](./src/assets/preview-2.png)
 
 Edit A Playlist (Recommendation section coming soon!)
-![](./src/assets/preview-2.png)
+![](./src/assets/preview-3.png)
 
 ## Running Locally
 
