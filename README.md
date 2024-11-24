@@ -4,8 +4,13 @@ This is a website that you can use to create and edit playlists using your Spoti
 
 Please note that this project is a work in progress and began on 11/16/2024.
 
+Login Page
 ![](./src/assets/preview-login.png)
 
+All User Playlists
+![](./src/assets/preview-2.png)
+
+Edit A Playlist (Recommendation section coming soon!)
 ![](./src/assets/preview-2.png)
 
 ## Running Locally
