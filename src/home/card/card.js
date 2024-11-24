@@ -12,6 +12,7 @@ const Card = ({ playlist = null, isSelected = false }) => {
   const [image, setImage] = useState("");
   const [buttonName, setButtonName] = useState("");
   const [isProfile, setIsProfile] = useState(false);
+  const [selectedPlaylist, setSelectedPlaylist] = useState();
 
   useEffect(() => {
     const hasPlaylists = !!playlists?.length > 0;
@@ -24,6 +25,7 @@ const Card = ({ playlist = null, isSelected = false }) => {
       setIsProfile(true);
     } else {
       playlist = playlist ?? playlists[playlists.length - 1];
+      setSelectedPlaylist(playlist);
       setName(playlist.name);
       setDescription(stripHTML(playlist.description));
       setButtonName(isSelected ? "Back To Main" : "Edit Playlist");
@@ -40,6 +42,7 @@ const Card = ({ playlist = null, isSelected = false }) => {
         buttonName={buttonName}
         image={image}
         isProfile={isProfile}
+        playlist={selectedPlaylist}
       />
     </div>
   );

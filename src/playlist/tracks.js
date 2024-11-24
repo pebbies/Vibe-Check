@@ -22,11 +22,11 @@ const Tracks = ({ playlist }) => {
       }, {});
 
       setArtists(artistNames);
+
+      setTimeout(() => setLoading(false), 500);
     };
 
     getTracks();
-
-    setTimeout(() => setLoading(false), 500);
   }, [playlist]);
 
   if (loading) {

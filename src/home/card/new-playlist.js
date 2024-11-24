@@ -1,12 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import Image from "../../util/image";
 
-const NewPLaylist = ({ image, name, description, buttonName, isProfile }) => {
+const NewPLaylist = ({
+  image,
+  name,
+  description,
+  buttonName,
+  isProfile,
+  playlist,
+}) => {
   const navigate = useNavigate();
 
   const handleButtonPress = () => {
     if (buttonName === "Back To Main") {
       navigate("/");
+    }
+
+    if (buttonName === "Edit Playlist" && playlist) {
+      navigate(`/playlist/${playlist.id}`);
     }
   };
 
