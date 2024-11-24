@@ -60,6 +60,8 @@ const Tracks = ({ playlist }) => {
             <div className="w-64 ml-2 text-gray-500 text-sm">{artistNames}</div>
 
             <div className="w-64 ml-2 text-gray-500 text-sm">{albumName}</div>
+
+            <div className="w-16 ml-2 text-red-500 text-sm">Remove</div>
           </div>
         );
       })}
