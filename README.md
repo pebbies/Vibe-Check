@@ -6,7 +6,7 @@ Please note that this project is a work in progress and began on 11/16/2024.
 
 ![](./src/assets/preview-login.png)
 
-![](./src/assets/preview.png)
+![](./src/assets/preview-2.png)
 
 ## Running Locally
 
